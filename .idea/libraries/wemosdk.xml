@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="wemosdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/wemosdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

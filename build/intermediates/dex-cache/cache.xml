@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_2da16d1676b9f7b8354abe7dd52d50f05ea2a61e.jar" />
+    </item>
+    <item
+        jar="/Users/mike.roelens/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0_871d27a677ae9c605c28e451cc90c4c8a1c8c0be.jar" />
+    </item>
+    <item
+        jar="/Users/mike.roelens/dev/git/mobile/Emojification/app/libs/wemosdk.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="24c2c9b0a6382ce29bc45ca78ab7f6628e4389bb">
+        <dex dex="/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/pre-dexed/debug/wemosdk_e96506826e81ecfce1b899f4009006ad395de4b0.jar" />
+    </item>
+    <item
+        jar="/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.0_98754802f25125bb3b04cc77745fa0871570456a.jar" />
+    </item>
+
+</items>

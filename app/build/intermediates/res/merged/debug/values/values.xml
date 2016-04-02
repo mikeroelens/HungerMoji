@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_color">#000</color>
+    <color name="blue_color">#3D99CA</color>
+    <color name="dark_grey_color">#666666</color>
+    <color name="orange_color">#FFBB33</color>
+    <color name="white_color">#FFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="app_name">Emojification</string>
+    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>
