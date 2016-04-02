@@ -4,23 +4,11 @@
         "source": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/generated/res/pngs/debug/drawable-hdpi/emoji_moon_light.png"
     },
     {
-        "merged": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/emoji_sun.png",
-        "source": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/generated/res/pngs/debug/drawable-hdpi/emoji_sun.png"
-    },
-    {
         "merged": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/emoji_sun.png",
         "source": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/generated/res/pngs/debug/drawable-hdpi/emoji_sun.png"
     },
     {
-        "merged": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/emoji_moon_light.png",
-        "source": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/generated/res/pngs/debug/drawable-hdpi/emoji_moon_light.png"
-    },
-    {
         "merged": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
         "source": "/Users/mike.roelens/dev/git/mobile/Emojification/app/src/main/res/drawable-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
-        "source": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/src/main/res/drawable-hdpi/ic_launcher.png"
     }
 ]

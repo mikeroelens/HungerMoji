@@ -4,14 +4,6 @@
         "source": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/generated/res/pngs/debug/drawable-anydpi-v21/emoji_moon_light.xml"
     },
     {
-        "merged": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/emoji_moon_light.xml",
-        "source": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/generated/res/pngs/debug/drawable-anydpi-v21/emoji_moon_light.xml"
-    },
-    {
-        "merged": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/emoji_sun.xml",
-        "source": "/Users/mike.roelens/dev/git/mobile/WeMoDemoNEW1/app/build/generated/res/pngs/debug/drawable-anydpi-v21/emoji_sun.xml"
-    },
-    {
         "merged": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/emoji_sun.xml",
         "source": "/Users/mike.roelens/dev/git/mobile/Emojification/app/build/generated/res/pngs/debug/drawable-anydpi-v21/emoji_sun.xml"
     }

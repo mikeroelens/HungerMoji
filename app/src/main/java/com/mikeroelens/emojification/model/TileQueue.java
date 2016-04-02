@@ -18,7 +18,7 @@ public class TileQueue  {
 
     public void add(TileNotification tile) {
         synchronized (TileQueue.class) {
-            mNotificationManager.notify(tile.getId(), tile.getNotification());
+            tile.display(mNotificationManager);
             tiles.add(tile);
         }
     }

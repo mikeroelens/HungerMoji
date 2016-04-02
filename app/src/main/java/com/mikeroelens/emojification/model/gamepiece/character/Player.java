@@ -40,4 +40,8 @@ abstract public class Player extends GamePiece {
     public void setState(@State int state) {
         this.state = state;
     }
+
+    public @State int getState() {
+        return state;
+    }
 }
