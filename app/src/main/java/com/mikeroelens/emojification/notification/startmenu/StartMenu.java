@@ -1,12 +1,12 @@
-package com.mikeroelens.emojification.startmenu;
+package com.mikeroelens.emojification.notification.startmenu;
 
 import android.app.NotificationManager;
 import android.content.Context;
 
-import com.mikeroelens.emojification.startmenu.notification.BeginNotification;
-import com.mikeroelens.emojification.startmenu.notification.FoodSelectNotification;
-import com.mikeroelens.emojification.startmenu.notification.PlayerSelectNotification;
-import com.mikeroelens.emojification.startmenu.notification.TitleNotification;
+import com.mikeroelens.emojification.notification.startmenu.BeginNotification;
+import com.mikeroelens.emojification.notification.startmenu.FoodSelectNotification;
+import com.mikeroelens.emojification.notification.startmenu.PlayerSelectNotification;
+import com.mikeroelens.emojification.notification.startmenu.TitleNotification;
 
 public class StartMenu {
     private Context mContext;

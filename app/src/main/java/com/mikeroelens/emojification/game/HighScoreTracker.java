@@ -1,4 +1,4 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.game;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.notification;
 
 
 import android.support.annotation.StringDef;

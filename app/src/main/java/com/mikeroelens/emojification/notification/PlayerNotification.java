@@ -5,8 +5,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Handler;
 
-import com.mikeroelens.emojification.NotificationAction;
-import com.mikeroelens.emojification.R;
 import com.mikeroelens.emojification.model.SelectPlayerList;
 import com.mikeroelens.emojification.model.gamepiece.character.Player;
 import com.mikeroelens.emojification.utils.Utils;

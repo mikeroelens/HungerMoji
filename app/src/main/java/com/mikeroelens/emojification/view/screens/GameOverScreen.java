@@ -1,11 +1,14 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.view.screens;
 
 
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mikeroelens.emojification.model.Emojis;
+import com.mikeroelens.emojification.R;
 import com.mikeroelens.emojification.game.GameInfo;
+import com.mikeroelens.emojification.game.HighScoreTracker;
 import com.mikeroelens.emojification.view.PixelatedTextView;
 
 import butterknife.Bind;
@@ -43,7 +46,7 @@ public class GameOverScreen extends BaseContentScreen {
     }
 
     @Override
-    View getContentView() {
+    public View getContentView() {
         return mView;
     }
 

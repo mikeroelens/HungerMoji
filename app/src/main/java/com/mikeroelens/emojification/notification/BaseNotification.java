@@ -6,13 +6,9 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.mikeroelens.emojification.MainActivity;
-import com.mikeroelens.emojification.NotificationAction;
 import com.mikeroelens.emojification.R;
-
-import java.math.MathContext;
 
 abstract public class BaseNotification {
     protected int mId;

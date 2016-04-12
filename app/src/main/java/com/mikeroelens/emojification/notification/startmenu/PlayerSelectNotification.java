@@ -1,10 +1,10 @@
-package com.mikeroelens.emojification.startmenu.notification;
+package com.mikeroelens.emojification.notification.startmenu;
 
 import android.app.Notification;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 
-import com.mikeroelens.emojification.NotificationAction;
+import com.mikeroelens.emojification.notification.NotificationAction;
 import com.mikeroelens.emojification.R;
 import com.mikeroelens.emojification.model.SelectPlayerList;
 import com.mikeroelens.emojification.model.gamepiece.character.Player;
@@ -21,7 +21,7 @@ public class PlayerSelectNotification extends BaseNotification {
         SelectPlayerList.list.getCurrentItem().setState(Player.STATE_NORMAL);
 
         builder()
-            .setSmallIcon(R.drawable.icon_letter_o)
+            .setSmallIcon(R.drawable.icon_letter_u)
             .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.transparent_pixel))
             .setContentTitle(SelectPlayerList.list.getCurrentItem().render())
             .setContentText(SelectPlayerList.list.getCurrentItem().getName());

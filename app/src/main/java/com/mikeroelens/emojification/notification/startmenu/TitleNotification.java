@@ -1,4 +1,4 @@
-package com.mikeroelens.emojification.startmenu.notification;
+package com.mikeroelens.emojification.notification.startmenu;
 
 import android.app.Notification;
 import android.content.Context;
@@ -19,7 +19,7 @@ public class TitleNotification extends BaseNotification {
             .setContentText(mContext.getString(R.string.start_menu_swipe_for_next_option))
             .setOngoing(true)
             .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.transparent_pixel))
-            .setSmallIcon(R.drawable.icon_letter_d)
+            .setSmallIcon(R.drawable.icon_letter_p)
             .setPriority(Notification.PRIORITY_HIGH)
             .build();
     }

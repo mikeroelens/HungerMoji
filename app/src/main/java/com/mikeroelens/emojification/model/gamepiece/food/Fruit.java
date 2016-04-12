@@ -1,6 +1,6 @@
 package com.mikeroelens.emojification.model.gamepiece.food;
 
-import com.mikeroelens.emojification.Emojis;
+import com.mikeroelens.emojification.model.Emojis;
 
 import java.util.ArrayList;
 import java.util.Arrays;

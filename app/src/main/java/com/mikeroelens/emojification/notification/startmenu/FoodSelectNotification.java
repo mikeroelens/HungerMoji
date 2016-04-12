@@ -1,10 +1,10 @@
-package com.mikeroelens.emojification.startmenu.notification;
+package com.mikeroelens.emojification.notification.startmenu;
 
 import android.app.Notification;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 
-import com.mikeroelens.emojification.NotificationAction;
+import com.mikeroelens.emojification.notification.NotificationAction;
 import com.mikeroelens.emojification.R;
 import com.mikeroelens.emojification.model.SelectFoodList;
 import com.mikeroelens.emojification.model.SelectPlayerList;
@@ -23,7 +23,7 @@ public class FoodSelectNotification extends BaseNotification {
 
         builder()
             .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.transparent_pixel))
-            .setSmallIcon(R.drawable.icon_letter_w)
+            .setSmallIcon(R.drawable.icon_letter_l)
             .setContentTitle(SelectFoodList.list.getCurrentItem().getStringSequence())
             .setContentText(SelectFoodList.list.getCurrentItem().getName());
 

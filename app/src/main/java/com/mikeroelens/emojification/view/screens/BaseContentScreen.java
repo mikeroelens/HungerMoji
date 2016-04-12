@@ -1,4 +1,4 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.view.screens;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ abstract public class BaseContentScreen {
         mContext = context;
     }
 
-    abstract View getContentView();
+    public abstract View getContentView();
 
     protected View inflateById(int viewId) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

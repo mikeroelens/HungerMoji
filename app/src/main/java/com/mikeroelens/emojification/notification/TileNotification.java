@@ -3,7 +3,6 @@ package com.mikeroelens.emojification.notification;
 import android.app.Notification;
 import android.content.Context;
 
-import com.mikeroelens.emojification.NotificationAction;
 import com.mikeroelens.emojification.model.gamepiece.GamePiece;
 import com.mikeroelens.emojification.utils.Utils;
 

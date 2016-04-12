@@ -8,8 +8,14 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import com.mikeroelens.emojification.game.Game;
+import com.mikeroelens.emojification.notification.NotificationAction;
 import com.mikeroelens.emojification.utils.Utils;
+import com.mikeroelens.emojification.view.DisableInternetDialog;
 import com.mikeroelens.emojification.view.SwipingHandView;
+import com.mikeroelens.emojification.view.screens.GameOverScreen;
+import com.mikeroelens.emojification.view.screens.MidGameScreen;
+import com.mikeroelens.emojification.view.screens.PreGameScreen;
+import com.mikeroelens.emojification.view.screens.StartScreen;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

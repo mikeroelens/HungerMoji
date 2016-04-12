@@ -1,9 +1,11 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.view;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
+
+import com.mikeroelens.emojification.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

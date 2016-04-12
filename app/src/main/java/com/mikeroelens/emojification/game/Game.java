@@ -12,7 +12,7 @@ import com.mikeroelens.emojification.model.gamepiece.Bomb;
 import com.mikeroelens.emojification.model.gamepiece.GamePieceGenerator;
 import com.mikeroelens.emojification.notification.PlayerNotification;
 import com.mikeroelens.emojification.notification.TileNotification;
-import com.mikeroelens.emojification.startmenu.StartMenu;
+import com.mikeroelens.emojification.notification.startmenu.StartMenu;
 
 import java.util.Random;
 import java.util.Timer;

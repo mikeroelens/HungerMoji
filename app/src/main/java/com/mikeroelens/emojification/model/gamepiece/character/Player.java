@@ -2,8 +2,8 @@ package com.mikeroelens.emojification.model.gamepiece.character;
 
 import android.support.annotation.IntDef;
 
-import com.mikeroelens.emojification.Emojis;
-import com.mikeroelens.emojification.Emojis.Emoji;
+import com.mikeroelens.emojification.model.Emojis;
+import com.mikeroelens.emojification.model.Emojis.Emoji;
 import com.mikeroelens.emojification.HungerMojiApplication;
 import com.mikeroelens.emojification.model.gamepiece.GamePiece;
 

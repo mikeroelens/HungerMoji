@@ -1,6 +1,6 @@
 package com.mikeroelens.emojification.model.gamepiece.character;
 
-import com.mikeroelens.emojification.Emojis;
+import com.mikeroelens.emojification.model.Emojis;
 import com.mikeroelens.emojification.R;
 
 public class Pig extends Player {

@@ -1,11 +1,12 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.view.screens;
 
 
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
-import com.mikeroelens.emojification.view.PixelatedTextView;
+import com.mikeroelens.emojification.model.Emojis;
+import com.mikeroelens.emojification.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -41,7 +42,7 @@ public class StartScreen extends BaseContentScreen {
     }
 
     @Override
-    View getContentView() {
+    public View getContentView() {
         return mView;
     }
 

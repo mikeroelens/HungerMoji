@@ -1,8 +1,10 @@
-package com.mikeroelens.emojification;
+package com.mikeroelens.emojification.view.screens;
 
 
 import android.content.Context;
 import android.view.View;
+
+import com.mikeroelens.emojification.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,7 +30,7 @@ public class MidGameScreen extends BaseContentScreen {
     }
 
     @Override
-    View getContentView() {
+    public View getContentView() {
         return mView;
     }
 
