@@ -15,13 +15,12 @@ public class TitleNotification extends BaseNotification {
     @Override
     public Notification build() {
         return builder()
-            .setContentTitle("Select character and food") //TODO: localize
-            .setContentText("Swipe for next option")
+            .setContentTitle(mContext.getString(R.string.start_menu_select_character_and_food))
+            .setContentText(mContext.getString(R.string.start_menu_swipe_for_next_option))
             .setOngoing(true)
             .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.transparent_pixel))
             .setSmallIcon(R.drawable.icon_letter_d)
             .setPriority(Notification.PRIORITY_HIGH)
-            .setTicker("Swipe down to begin game!")
             .build();
     }
 }

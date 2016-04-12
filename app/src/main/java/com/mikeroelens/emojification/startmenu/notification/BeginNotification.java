@@ -19,10 +19,10 @@ public class BeginNotification extends BaseNotification {
         builder()
             .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.transparent_pixel))
             .setSmallIcon(R.drawable.icon_letter_n)
-            .setContentTitle("Swipe to Begin!") //TODO: localize
-            .setContentText("-------------------------->");
+            .setContentTitle(mContext.getString(R.string.start_menu_swipe_to_begin))
+            .setContentText(mContext.getString(R.string.start_menu_swipe_arrow));
 
-        addDeleteIntent(NotificationAction.BEGIN_GAME);
+        setDeleteAction(NotificationAction.BEGIN_GAME);
 
         return builder().build();
     }

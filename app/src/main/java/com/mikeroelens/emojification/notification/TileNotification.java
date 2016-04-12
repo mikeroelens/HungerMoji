@@ -6,7 +6,6 @@ import android.content.Context;
 import com.mikeroelens.emojification.NotificationAction;
 import com.mikeroelens.emojification.model.gamepiece.GamePiece;
 import com.mikeroelens.emojification.utils.Utils;
-import com.mikeroelens.emojification.view.ScoreKeeperIcon;
 
 public class TileNotification extends BaseNotification {
     private int mPosition;
@@ -38,7 +37,7 @@ public class TileNotification extends BaseNotification {
             .setContentTitle(getPaddedGamePiece())
             .setOngoing(mOnGoing);
 
-        addDeleteIntent(NotificationAction.TILE_DISMISSED);
+        setDeleteAction(NotificationAction.TILE_DISMISSED);
 
         return builder().build();
     }

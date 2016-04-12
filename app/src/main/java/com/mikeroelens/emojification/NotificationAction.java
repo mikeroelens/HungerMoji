@@ -1,8 +1,22 @@
 package com.mikeroelens.emojification;
 
 
+import android.support.annotation.StringDef;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 public class NotificationAction {
-    public static final String KEY_ACTION = "type"; //TODO: change value
+    @Retention(RetentionPolicy.SOURCE)
+    @StringDef({
+            BEGIN_GAME,
+            TILE_DISMISSED,
+            NEXT_FOOD,
+            NEXT_PLAYER
+    })
+    public @interface Action {}
+
+    public static final String KEY_ACTION = "type";
     public static final String KEY_NOTIFICATION_ID = "notificationId";
 
     public static final String BEGIN_GAME = "BeginGame";

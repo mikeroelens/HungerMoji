@@ -74,7 +74,7 @@ public class MainActivity extends Activity implements StartScreen.StartScreenLis
         }
     }
 
-    //TODO: create more robust back button handling
+    //TODO: create more robust back button handling?
     @Override
     public void onBackPressed() {
         if (mCurrentScreen == Screen.START) {
@@ -89,7 +89,7 @@ public class MainActivity extends Activity implements StartScreen.StartScreenLis
         }
     }
 
-    //TODO: create more robust view swapping
+    //TODO: create more robust view swapping?
     private void updateScreen(Screen screen) {
         mCurrentScreen = screen;
         mainContentLayout.removeAllViewsInLayout();

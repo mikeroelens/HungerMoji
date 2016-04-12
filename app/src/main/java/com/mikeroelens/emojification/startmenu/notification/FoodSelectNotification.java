@@ -27,7 +27,7 @@ public class FoodSelectNotification extends BaseNotification {
             .setContentTitle(SelectFoodList.list.getCurrentItem().getStringSequence())
             .setContentText(SelectFoodList.list.getCurrentItem().getName());
 
-        addDeleteIntent(NotificationAction.NEXT_FOOD);
+        setDeleteAction(NotificationAction.NEXT_FOOD);
 
         return builder().build();
     }

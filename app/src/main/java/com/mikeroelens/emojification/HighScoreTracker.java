@@ -9,14 +9,16 @@ public class HighScoreTracker {
     private static final String HIGH_SCORE_KEY = "HighScoreKey";
 
     public static void newScore(Context context, int score) {
-        SharedPreferences sp = context.getSharedPreferences(HIGH_SCORE_PREFS, Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putInt(HIGH_SCORE_KEY, score);
-        editor.apply();
+        if (score > getHighScore(context)) {
+            SharedPreferences sp = context.getSharedPreferences(HIGH_SCORE_PREFS, Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt(HIGH_SCORE_KEY, score);
+            editor.apply();
+        }
     }
 
     public static int getHighScore(Context context) {
         SharedPreferences sp = context.getSharedPreferences(HIGH_SCORE_PREFS, Activity.MODE_PRIVATE);
-        return sp.getInt(HIGH_SCORE_KEY, -1);
+        return sp.getInt(HIGH_SCORE_KEY, -9999);
     }
 }

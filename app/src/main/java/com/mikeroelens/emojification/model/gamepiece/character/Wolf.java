@@ -1,11 +1,12 @@
 package com.mikeroelens.emojification.model.gamepiece.character;
 
 import com.mikeroelens.emojification.Emojis;
+import com.mikeroelens.emojification.R;
 
 public class Wolf extends Player {
     @Override
-    public String getName() {
-        return "Wolf";
+    public int getNameResourceId() {
+        return R.string.character_name_wolf;
     }
 
     @Override

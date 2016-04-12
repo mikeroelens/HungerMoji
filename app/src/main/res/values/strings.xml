@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">HungerMoji</string>
 
     <string name="start_screen_subttitle">A Notification Game</string>
@@ -10,11 +10,16 @@
     <string name="start_screen_instructions_bonus">- Swipe for bonus points</string>
     <string name="start_screen_instructions_food">- Don\'t swipe. Feed your emoji</string>
 
+    <string name="start_menu_swipe_to_begin">Swipe to Begin!</string>
+    <string name="start_menu_swipe_arrow">--------------------------></string>
+    <string name="start_menu_select_character_and_food">Select character and food</string>
+    <string name="start_menu_swipe_for_next_option">Swipe for next option</string>
+
     <string name="mid_game_screen_stop">STOP</string>
     <string name="mid_game_screen_currently_playing_message">You are currently playing a game. Go back to the notification drawer before you eat a bomb!</string>
 
     <string name="pre_game_screen_currently_playing_message">To begin the game, open your notifications by swiping down from the top of the screen.</string>
-    <string name="pre_game_screen_cancel">CANCEL</string>
+    <string name="pre_game_screen_cancel" tools:ignore="ButtonCase">CANCEL</string>
 
     <string name="game_over_screen_game_over">GAME OVER</string>
 
@@ -27,4 +32,17 @@
     <string name="game_over_screen_you_scored">You scored:</string>
     <string name="game_over_screen_high_score">High Score: %1$s</string>
     <string name="game_over_screen_home">HOME</string>
+
+    <string name="character_name_alien">Alien</string>
+    <string name="character_name_bear">Bear</string>
+    <string name="character_name_big_smiley">Big Smiley</string>
+    <string name="character_name_chick">Chick</string>
+    <string name="character_name_cow">Cow</string>
+    <string name="character_name_frog">Frog</string>
+    <string name="character_name_kitty">Kitty</string>
+    <string name="character_name_monkey">Monkey</string>
+    <string name="character_name_mouse">Mouse</string>
+    <string name="character_name_pig">Pig</string>
+    <string name="character_name_tiger">Tiger</string>
+    <string name="character_name_wolf">Wolf</string>
 </resources>

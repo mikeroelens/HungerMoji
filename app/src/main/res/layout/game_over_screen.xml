@@ -15,8 +15,6 @@
         android:gravity="center"
         android:text="@string/game_over_screen_game_over"/>
 
-    <!-- TODO: Add image of banana peel? -->
-
     <TextView
         android:id="@+id/txtExplosionEmoji"
         android:layout_width="wrap_content"

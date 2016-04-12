@@ -26,7 +26,6 @@ abstract public class BaseNotification {
         builder = new NotificationCompat.Builder(context)
                 .setAutoCancel(false)
                 .setWhen(mId)
-                .setTicker(Long.toString(System.currentTimeMillis()))
                 .setOngoing(false)
                 .setDefaults(0)
                 .setSmallIcon(R.drawable.transparent_pixel)
@@ -48,8 +47,7 @@ abstract public class BaseNotification {
         notificationManager.notify(mId, build());
     }
 
-    //TODO: Make action a StringDef or enum?
-    public void addDeleteIntent(String action) {
+    public void setDeleteAction(@NotificationAction.Action String action) {
         Intent intent = new Intent(mContext, MainActivity.class);
         intent.putExtra(NotificationAction.KEY_ACTION, action);
         intent.putExtra(NotificationAction.KEY_NOTIFICATION_ID, mId);

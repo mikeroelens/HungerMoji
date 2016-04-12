@@ -26,7 +26,7 @@ public class PlayerSelectNotification extends BaseNotification {
             .setContentTitle(SelectPlayerList.list.getCurrentItem().render())
             .setContentText(SelectPlayerList.list.getCurrentItem().getName());
 
-        addDeleteIntent(NotificationAction.NEXT_PLAYER);
+        setDeleteAction(NotificationAction.NEXT_PLAYER);
 
         return builder().build();
     }

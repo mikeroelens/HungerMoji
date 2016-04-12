@@ -29,7 +29,6 @@ abstract public class FoodPiece extends GamePiece {
         return -10;
     }
 
-    //TODO: rename method?
     public String getStringSequence(){
         StringBuilder sb = new StringBuilder();
 
