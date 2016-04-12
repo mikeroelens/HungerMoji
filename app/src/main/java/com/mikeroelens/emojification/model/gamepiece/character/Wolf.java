@@ -1,0 +1,15 @@
+package com.mikeroelens.emojification.model.gamepiece.character;
+
+import com.mikeroelens.emojification.Emojis;
+
+public class Wolf extends Player {
+    @Override
+    public String getName() {
+        return "Wolf";
+    }
+
+    @Override
+    String getNormalEmoji() {
+        return Emojis.CHAR_WOLF;
+    }
+}

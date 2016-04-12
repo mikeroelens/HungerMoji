@@ -10,11 +10,6 @@ public class BigSmiley extends Player {
 
     @Override
     String getNormalEmoji() {
-        return Emojis.CHAR_BIG_SMILEY_NORMAL;
-    }
-
-    @Override
-    String getDeadEmoji() {
-        return Emojis.CHAR_BIG_SMILEY_DEAD;
+        return Emojis.CHAR_BIG_SMILEY;
     }
 }

@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Emojification</string>
+    <string name="app_name">HungerMoji</string>
+
+    <string name="start_screen_subttitle">A Notification Game</string>
+    <string name="start_screen_play">PLAY</string>
+    <string name="start_screen_high_scores">High Scores</string>
+    <string name="start_screen_how_to_play">How to Play:</string>
+    <string name="start_screen_instructions_bomb">- Swipe to save your emoji</string>
+    <string name="start_screen_instructions_bonus">- Swipe for bonus points</string>
+    <string name="start_screen_instructions_food">- Don\'t swipe. Feed your emoji</string>
+
+    <string name="mid_game_screen_stop">STOP</string>
+    <string name="mid_game_screen_currently_playing_message">You are currently playing a game. Go back to the notification drawer before you eat a bomb!</string>
+
+    <string name="pre_game_screen_currently_playing_message">To begin the game, open your notifications by swiping down from the top of the screen.</string>
+    <string name="pre_game_screen_cancel">CANCEL</string>
+
+    <string name="game_over_screen_game_over">GAME OVER</string>
+
+    <string name="dialog_disable_internet_message">It looks like you\'re connected to the internet. For the best experience, we recommend you:</string>
+    <string name="dialog_disable_internet_step_1">1. Turn on ✈ mode</string>
+    <string name="dialog_disable_internet_step_2">2. Turn off wifi</string>
+    <string name="dialog_disable_internet_step_3">3. Clear all notifications</string>
+    <string name="dialog_disable_internet_continue">CONTINUE</string>
+
+    <string name="game_over_screen_you_scored">You scored:</string>
+    <string name="game_over_screen_high_score">High Score: %1$s</string>
+    <string name="game_over_screen_home">HOME</string>
 </resources>

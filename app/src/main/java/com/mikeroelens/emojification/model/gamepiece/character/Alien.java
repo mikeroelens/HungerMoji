@@ -10,11 +10,6 @@ public class Alien extends Player {
 
     @Override
     String getNormalEmoji() {
-        return Emojis.CHAR_ALIEN_NORMAL;
-    }
-
-    @Override
-    String getDeadEmoji() {
-        return Emojis.CHAR_ALIEN_DEAD;
+        return Emojis.CHAR_ALIEN;
     }
 }

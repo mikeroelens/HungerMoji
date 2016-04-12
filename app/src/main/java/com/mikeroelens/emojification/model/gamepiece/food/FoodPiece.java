@@ -8,20 +8,20 @@ import java.util.List;
 abstract public class FoodPiece extends GamePiece {
     abstract public List<String> getEmojis();
     abstract public String getName();
-
-    private DistributedRandomNumberGenerator randomNumberGenerator;
+    private String randomEmoji;
 
     public FoodPiece() {
-        randomNumberGenerator = new DistributedRandomNumberGenerator();
+        DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator();
 
         for (int i = 0; i < getEmojis().size(); i++) {
-            randomNumberGenerator.addNumber(i, (double) 1 / getEmojis().size());
+            drng.addNumber(i, (double) 1 / getEmojis().size());
         }
+        randomEmoji = getEmojis().get(drng.getDistributedRandomNumber());
     }
 
     @Override
     public String render() {
-        return getEmojis().get(randomNumberGenerator.getDistributedRandomNumber());
+        return randomEmoji;
     }
 
     @Override
@@ -34,7 +34,7 @@ abstract public class FoodPiece extends GamePiece {
         StringBuilder sb = new StringBuilder();
 
         for (String emoji: getEmojis()) {
-            sb.append(emoji + " ");
+            sb.append(emoji).append(" ");
         }
 
         return sb.toString();

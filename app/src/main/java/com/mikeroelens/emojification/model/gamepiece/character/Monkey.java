@@ -10,11 +10,6 @@ public class Monkey extends Player {
 
     @Override
     String getNormalEmoji() {
-        return Emojis.CHAR_MONKEY_NORMAL;
-    }
-
-    @Override
-    String getDeadEmoji() {
-        return Emojis.CHAR_MONKEY_DEAD;
+        return Emojis.CHAR_MONKEY;
     }
 }

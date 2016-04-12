@@ -9,7 +9,9 @@ import java.lang.annotation.RetentionPolicy;
 final public class Emojis {
     @Retention(RetentionPolicy.SOURCE)
     @StringDef({
+            // Misc.
             EXPLOSION,
+            BOMB,
 
             // Fruits
             GRAPE,
@@ -42,6 +44,8 @@ final public class Emojis {
             SHRIMP,
             FISH_CAKE,
             ODEN,
+            FISH,
+            OCTOPUS,
 
             // Liquid Diet
             BABY_BOTTLE,
@@ -57,32 +61,38 @@ final public class Emojis {
             TEN,
 
             // Characters
-            CHAR_BIG_SMILEY_NORMAL,
-            CHAR_BIG_SMILEY_DEAD,
-            CHAR_KITTY_NORMAL,
-            CHAR_KITTY_DEAD,
-            CHAR_ALIEN_NORMAL,
-            CHAR_ALIEN_DEAD,
-            CHAR_MONKEY_NORMAL,
-            CHAR_MONKEY_DEAD,
-            CHAR_CHICKEN_NORMAL,
-            CHAR_CHICKEN_DEAD
+            CHAR_BIG_SMILEY,
+            CHAR_KITTY,
+            CHAR_ALIEN,
+            CHAR_MONKEY,
+            CHAR_COW,
+            CHAR_MOUSE,
+            CHAR_PIG,
+            CHAR_FROG,
+            CHAR_WOLF,
+            CHAR_TIGER,
+            CHAR_BEAR,
+            CHAR_CHICK
     })
     public @interface Emoji {}
 
+    // Misc.
     public static final String EXPLOSION = "\uD83D\uDCA5";
+    public static final String BOMB = "\uD83D\uDCA3";
 
     // Characters
-    public static final String CHAR_BIG_SMILEY_NORMAL = "\uD83D\uDE00";
-    public static final String CHAR_BIG_SMILEY_DEAD = "\uD83D\uDE31";
-    public static final String CHAR_KITTY_NORMAL = "\uD83D\uDE3A";
-    public static final String CHAR_KITTY_DEAD = "\uD83D\uDE40";
-    public static final String CHAR_ALIEN_NORMAL = "\uD83D\uDC7D";
-    public static final String CHAR_ALIEN_DEAD = "\uD83D\uDC80";
-    public static final String CHAR_MONKEY_NORMAL = "\uD83D\uDC35";
-    public static final String CHAR_MONKEY_DEAD = "\uD83D\uDE48";
-    public static final String CHAR_CHICKEN_NORMAL = "\uD83D\uDC14";
-    public static final String CHAR_CHICKEN_DEAD = "\uD83C\uDF57";
+    public static final String CHAR_BIG_SMILEY = "\uD83D\uDE00";
+    public static final String CHAR_KITTY = "\uD83D\uDE3A";
+    public static final String CHAR_ALIEN = "\uD83D\uDC7D";
+    public static final String CHAR_MONKEY = "\uD83D\uDC35";
+    public static final String CHAR_COW = "\uD83D\uDC2E";
+    public static final String CHAR_MOUSE = "\uD83D\uDC2D";
+    public static final String CHAR_PIG = "\uD83D\uDC37";
+    public static final String CHAR_FROG = "\uD83D\uDC38";
+    public static final String CHAR_WOLF = "\uD83D\uDC3A";
+    public static final String CHAR_TIGER = "\uD83D\uDC2F";
+    public static final String CHAR_BEAR = "\uD83D\uDC3B";
+    public static final String CHAR_CHICK = "\uD83D\uDC23";
 
     // Bonus
     public static final String POINTING_RIGHT = "\uD83D\uDC49";
@@ -119,6 +129,8 @@ final public class Emojis {
     public static final String SHRIMP = "\uD83C\uDF64";
     public static final String FISH_CAKE = "\uD83C\uDF65";
     public static final String ODEN = "\uD83C\uDF62";
+    public static final String FISH = "\uD83D\uDC1F";
+    public static final String OCTOPUS = "\uD83D\uDC19";
 
     // Liquid Diet
     public static final String BABY_BOTTLE = "\uD83C\uDF7C";

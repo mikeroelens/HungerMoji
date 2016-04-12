@@ -1,0 +1,162 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <com.mikeroelens.emojification.view.PixelatedTextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:text="@string/app_name"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:textSize="60sp"/>
+
+    <com.mikeroelens.emojification.view.PixelatedTextView
+        android:id="@+id/txtSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:text="@string/start_screen_subttitle"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/txtTitle"
+        android:textSize="20sp"/>
+
+    <com.mikeroelens.emojification.view.PixelatedButton
+        android:layout_width="265dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        app:text="@string/start_screen_play"
+        app:textSize="20sp"
+        android:id="@+id/btnPlay"
+        android:layout_below="@+id/imgMonkey"/>
+
+
+    <ImageView
+        android:id="@+id/imgMonkey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/monkey"
+        android:layout_marginBottom="-20dp"
+        android:layout_alignRight="@id/btnPlay"
+        android:layout_marginRight="-5dp"
+        android:layout_below="@+id/txtSubtitle"/>
+
+    <!--
+    <com.mikeroelens.emojification.view.PixelatedButton
+        android:id="@+id/btnHighScores"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:text="@string/start_screen_high_scores"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btnPlay"
+        app:textSize="8sp" />
+        -->
+
+
+    <View
+        android:layout_width="140dp"
+        android:layout_height="3dp"
+        android:layout_below="@+id/txtHowToPlay"
+        android:layout_marginTop="-5dp"
+        android:layout_centerInParent="true"
+        android:background="@android:color/black" />
+
+    <com.mikeroelens.emojification.view.PixelatedTextView
+        android:id="@+id/txtHowToPlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPlay"
+        android:layout_marginTop="30dp"
+        android:textSize="30sp"
+        android:text="@string/start_screen_how_to_play"
+        android:gravity="center_horizontal"/>
+
+
+    <TableLayout
+        android:id="@+id/tableInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtHowToPlay">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtInstructionsBombEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                tools:text="X"/>
+
+            <com.mikeroelens.emojification.view.PixelatedTextView
+                android:id="@+id/txtInstructionsBomb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"
+                android:text="@string/start_screen_instructions_bomb"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtInstructionsBonusEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                tools:text="X"/>
+
+            <com.mikeroelens.emojification.view.PixelatedTextView
+                android:id="@+id/txtInstructionsBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"
+                android:text="@string/start_screen_instructions_bonus"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtInstructionsFoodEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                tools:text="XYZ"/>
+
+            <com.mikeroelens.emojification.view.PixelatedTextView
+                android:id="@+id/txtInstructionsFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"
+                android:text="@string/start_screen_instructions_food"/>
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>

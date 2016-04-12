@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="PixelatedButton">
+        <attr name="text" format="string"/>
+        <attr name="textSize" format="dimension" />
+        <attr name="textColour" format="color" />
+        <attr name="backgroundColour" format="color" />
+    </declare-styleable>
+</resources>

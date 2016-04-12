@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        
-    <color name="black_color">#000</color>
-    <color name="white_color">#FFF</color>
-    <color name="blue_color">#3D99CA</color>
-    <color name="orange_color">#FFBB33</color>
-    <color name="dark_grey_color">#666666</color>
-    
+    <color name="yellow">#ffff00</color>
+    <color name="green">#00ff00</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="primary_dark_material_light">#000000</color>
+    <color name="primary_material_light">#000000</color>
+    <color name="notification_icon_tint">#fafafa</color>
 </resources>

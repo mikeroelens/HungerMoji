@@ -10,7 +10,6 @@ import com.mikeroelens.emojification.model.SelectFoodList;
 import com.mikeroelens.emojification.model.TileQueue;
 import com.mikeroelens.emojification.model.gamepiece.Bomb;
 import com.mikeroelens.emojification.model.gamepiece.GamePieceGenerator;
-import com.mikeroelens.emojification.model.gamepiece.character.Player;
 import com.mikeroelens.emojification.notification.PlayerNotification;
 import com.mikeroelens.emojification.notification.TileNotification;
 import com.mikeroelens.emojification.startmenu.StartMenu;
@@ -20,9 +19,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Game {
-    //TODO: don't use enum?
-    private enum GameState {
+public class Game implements GameInfo {
+    public interface GameListener {
+        void onGameOver();
+    }
+
+    public enum GameState {
         INSTRUCTIONS,
         START_MENU,
         ACTIVE,
@@ -32,47 +34,56 @@ public class Game {
     private AtomicInteger id = new AtomicInteger(2000);
     private TileQueue mTileQueue;
     private NotificationManager mNotificationManager;
+    private GameListener mGameListener;
     private Context mContext;
     private PlayerNotification mPlayerNotification;
     private GameState mGameState = GameState.INSTRUCTIONS;
     private StartMenu mStartMenu;
     Timer gameTimer;
 
-    public Game(Context context, NotificationManager notificationManager) {
+    public Game(Context context, NotificationManager notificationManager, GameListener gameListener) {
         mContext = context;
         mNotificationManager = notificationManager;
+        mGameListener = gameListener;
     }
 
     public void startGamePlay() {
         mGameState = GameState.ACTIVE;
         mTileQueue = new TileQueue(mNotificationManager);
-        mPlayerNotification = new PlayerNotification(mContext);
-        mPlayerNotification.display(mNotificationManager);
 
         initializeTiles();
         mStartMenu.remove();
 
-        gameTimer = new Timer();
-
-        gameTimer.scheduleAtFixedRate(new TimerTask() {
+        mPlayerNotification = new PlayerNotification(mContext, mNotificationManager, new PlayerNotification.CountdownHandler() {
             @Override
-            public void run() {
-                TileNotification upcomingTile = mTileQueue.peek();
-                mPlayerNotification.updatePosition(upcomingTile.getPosition());
-                mPlayerNotification.updateScore(1);
-                mPlayerNotification.display(mNotificationManager);
+            public void onCountdownComplete() {
+                mTileQueue.enableDismissalOnAllTiles();
 
-                if (upcomingTile.getGamePiece() instanceof Bomb) {
-                    mTileQueue.removeAll();
-                    gameTimer.cancel();
-                    killPlayer();
-                    return;
-                }
+                gameTimer = new Timer();
+                gameTimer.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        TileNotification upcomingTile = mTileQueue.peek();
 
-                addRandomTile();
-                mTileQueue.remove(); //TODO: NEED TO MAKE SURE tiles isn't empty
+                        mPlayerNotification.updatePosition(upcomingTile.getPosition());
+                        mPlayerNotification.display(mNotificationManager);
+
+                        if (upcomingTile.getGamePiece() instanceof Bomb) {
+                            mTileQueue.removeAll();
+                            gameTimer.cancel();
+                            killPlayer();
+                            return;
+                        }
+
+                        mPlayerNotification.updateScore(1);
+                        addRandomTile();
+
+                        mTileQueue.remove(); //TODO: NEED TO MAKE SURE tiles isn't empty
+                    }
+                }, 0, Config.GAME_SPEED);
             }
-        }, 0, Config.GAME_SPEED);//put here time 1000 milliseconds=1 second
+        });
+        mPlayerNotification.display(mNotificationManager);
     }
 
     public void displayStartMenu() {
@@ -101,8 +112,9 @@ public class Game {
         new Handler(mContext.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                mPlayerNotification.kill();
-                mPlayerNotification.display(mNotificationManager);
+                mGameState = GameState.GAME_OVER;
+                stop();
+                mGameListener.onGameOver();
             }
         }, 600);
 
@@ -115,14 +127,20 @@ public class Game {
     }
 
     public void stop() {
-        gameTimer.cancel();
-        mTileQueue.removeAll();
+        if (gameTimer != null) {
+            gameTimer.cancel();
+        }
+
+        if (mTileQueue != null) {
+            mTileQueue.removeAll();
+        }
+
         mNotificationManager.cancelAll();
     }
 
     private void initializeTiles() {
         for (int i = 0; i < Config.NUM_GAME_PIECES; i++) {
-            mTileQueue.add(new TileNotification(mContext, id.decrementAndGet(), getRandomPosition(), SelectFoodList.list.getCurrentItem()));
+            mTileQueue.add(new TileNotification(mContext, id.decrementAndGet(), getRandomPosition(), SelectFoodList.list.getCurrentItem(), true));
         }
     }
 
@@ -132,5 +150,15 @@ public class Game {
 
     private int getRandomPosition() {
         return new Random().nextInt(40) + 1;
+    }
+
+    @Override
+    public GameState getGameState() {
+        return mGameState;
+    }
+
+    @Override
+    public int getScore() {
+        return mPlayerNotification.getScore();
     }
 }

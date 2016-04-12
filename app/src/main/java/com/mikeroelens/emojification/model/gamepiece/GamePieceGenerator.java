@@ -1,24 +1,40 @@
 package com.mikeroelens.emojification.model.gamepiece;
 
+import com.mikeroelens.emojification.Config;
 import com.mikeroelens.emojification.model.SelectFoodList;
-import com.mikeroelens.emojification.model.gamepiece.Bomb;
-import com.mikeroelens.emojification.model.gamepiece.BonusPiece;
-import com.mikeroelens.emojification.model.gamepiece.GamePiece;
 import com.mikeroelens.emojification.utils.DistributedRandomNumberGenerator;
 
 public class GamePieceGenerator {
+    final private static int BOMB = 1;
+    final private static int BONUS_PIECE = 2;
+    final private static int FOOD_PIECE = 3;
+    private static int tilesSinceLastBomb = Config.NUM_GAME_PIECES; // Game is initialized with NUM_GAME_PIECES food pieces
+
+    private static DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator();
+    static {
+        drng.addNumber(BOMB, 0.20d);
+        drng.addNumber(BONUS_PIECE, 0.025d);
+        drng.addNumber(FOOD_PIECE, 0.775d);
+    }
 
     public static GamePiece random() {
-        //TODO: Refactor this, shouldn't have to create DistributedRandomNumberGenerator everytime
-        DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator();
-        drng.addNumber(1, 0.20d);
-        drng.addNumber(2, 0.025d);
-        drng.addNumber(3, 0.775d);
+        if (tilesSinceLastBomb == Config.NUM_GAME_PIECES + 2) {
+            tilesSinceLastBomb = 0;
+            return new Bomb();
+        }
 
         switch (drng.getDistributedRandomNumber()) {
-            case 1: return new Bomb();
-            case 2: return new BonusPiece();
-            default: return SelectFoodList.list.getCurrentItem();
+            case BOMB:
+                tilesSinceLastBomb = 0;
+                return new Bomb();
+
+            case BONUS_PIECE:
+                tilesSinceLastBomb++;
+                return new BonusPiece();
+
+            default:
+                tilesSinceLastBomb++;
+                return SelectFoodList.list.getCurrentItem();
         }
     }
 }

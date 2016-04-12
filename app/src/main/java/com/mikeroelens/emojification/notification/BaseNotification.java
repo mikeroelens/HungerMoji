@@ -12,6 +12,8 @@ import com.mikeroelens.emojification.MainActivity;
 import com.mikeroelens.emojification.NotificationAction;
 import com.mikeroelens.emojification.R;
 
+import java.math.MathContext;
+
 abstract public class BaseNotification {
     protected int mId;
     protected Context mContext;
@@ -27,7 +29,8 @@ abstract public class BaseNotification {
                 .setTicker(Long.toString(System.currentTimeMillis()))
                 .setOngoing(false)
                 .setDefaults(0)
-                .setSmallIcon(R.drawable.ic_transparent)
+                .setSmallIcon(R.drawable.transparent_pixel)
+                .setColor(mContext.getResources().getColor(R.color.notification_icon_tint))
                 .setSound(null);
     }
 

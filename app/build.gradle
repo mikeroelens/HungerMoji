@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.mikeroelens.wemotoggle"
+        applicationId "com.mikeroelens.hungermoji"
         minSdkVersion 19
         targetSdkVersion 23
     }
@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
+    compile "com.android.support:appcompat-v7:23.2.1"
     compile 'com.android.support:support-v4:23.0.0'
-    compile files('libs/wemosdk.jar')
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

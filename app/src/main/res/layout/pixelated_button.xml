@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mikeroelens.emojification.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/bgPixelatedButton"
+        android:layout_margin="@dimen/main_content_border_width"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow">
+
+        <com.mikeroelens.emojification.view.PixelatedTextView
+            android:id="@+id/txtPixelatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Placeholder Text"
+            android:textColor="@android:color/black"/>
+    </FrameLayout>
+
+    <!-- Top Outline -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_content_border_width"
+        android:layout_marginLeft="@dimen/main_content_border_width"
+        android:layout_marginRight="@dimen/main_content_border_width"
+        android:background="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- Bottom Outline -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_content_border_width"
+        android:layout_marginLeft="@dimen/main_content_border_width"
+        android:layout_marginRight="@dimen/main_content_border_width"
+        android:background="@android:color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/view" />
+
+    <!-- Left Outline -->
+    <View
+        android:layout_width="@dimen/main_content_border_width"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/main_content_border_width"
+        android:layout_marginBottom="@dimen/main_content_border_width"
+        android:background="@android:color/black" />
+
+    <!-- Right Outline -->
+    <View
+        android:layout_width="@dimen/main_content_border_width"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/main_content_border_width"
+        android:layout_marginBottom="@dimen/main_content_border_width"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/black" />
+
+</RelativeLayout>

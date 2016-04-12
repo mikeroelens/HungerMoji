@@ -26,26 +26,40 @@ public class ScoreKeeperIcon {
         txtDelta = (TextView) v.findViewById(R.id.txtDelta);
     }
 
+    public int getScore() {
+        return score;
+    }
+
     public void updateScore(int delta){
         score += delta;
         txtScore.setText(Integer.toString(score));
+    }
 
+    public void updateDelta(int delta){
         if (delta > 0 ) {
+            txtDelta.setTextColor(mContext.getResources().getColor(R.color.green));
             txtDelta.setText("+" + delta);
         }
         else if (delta < 0) {
+            txtDelta.setTextColor(mContext.getResources().getColor(android.R.color.holo_red_light));
             txtDelta.setText(Integer.toString(delta));
         }
+
+        txtDelta.setVisibility(View.VISIBLE);
     }
+
 
     public Bitmap generateBitmap() {
         v.measure(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        //Bitmap bitmap = Bitmap.createBitmap(v.getWidth(), v.getHeight(), Bitmap.Config.ARGB_8888);
         Bitmap bitmap = Bitmap.createBitmap(Utils.dpToPixels(mContext, 32), Utils.dpToPixels(mContext, 32), Bitmap.Config.ARGB_8888);
         Canvas c = new Canvas(bitmap);
         v.layout(0, 0, v.getMeasuredWidth(), v.getMeasuredHeight());
         v.draw(c);
 
         return bitmap;
+    }
+
+    public void removeDelta() {
+        txtDelta.setVisibility(View.GONE);
     }
 }

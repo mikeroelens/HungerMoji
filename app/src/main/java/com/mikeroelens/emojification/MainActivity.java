@@ -5,62 +5,43 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import android.widget.FrameLayout;
 
 import com.mikeroelens.emojification.game.Game;
-import com.mikeroelens.emojification.model.SelectFoodList;
-import com.mikeroelens.emojification.model.TileQueue;
-import com.mikeroelens.emojification.model.gamepiece.Bomb;
-import com.mikeroelens.emojification.model.gamepiece.GamePieceGenerator;
-import com.mikeroelens.emojification.notification.PlayerNotification;
-import com.mikeroelens.emojification.notification.TileNotification;
-import com.mikeroelens.emojification.startmenu.StartMenu;
+import com.mikeroelens.emojification.utils.Utils;
+import com.mikeroelens.emojification.view.SwipingHandView;
 
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.atomic.AtomicInteger;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
-public class MainActivity extends Activity {
-    private NotificationManager mNotificationManager;
+
+public class MainActivity extends Activity implements StartScreen.StartScreenListener, MidGameScreen.MidGameScreenListener, PreGameScreen.PreGameListener, Game.GameListener, GameOverScreen.GameOverScreenListener {
+    private enum Screen {
+        START,
+        PRE_GAME,
+        MID_GAME,
+        GAME_OVER
+    }
+
+    private Screen mCurrentScreen = Screen.START;
     private Game mGame;
-
-    Button btnPlay;
-    Button btnStop;
+    @Bind(R.id.main_content_view) FrameLayout mainContentLayout;
+    @Bind(R.id.imgSwipeHand) SwipingHandView hand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        btnPlay = (Button) findViewById(R.id.btnPlay);
-        btnStop = (Button) findViewById(R.id.btnStop);
+        ButterKnife.bind(this);
 
-        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mGame = new Game(this, mNotificationManager);
-
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mGame.displayStartMenu();
-            }
-        });
-
-        btnStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mGame.stop();
-            }
-        });
+        mainContentLayout.addView(new StartScreen(this, this).getContentView());
     }
 
-    //TODO: what if onDestroy doesnt get called?
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mGame.stop();
+    protected void onPause() {
+        super.onPause();
+        //mGame.stop();
     }
 
     @Override
@@ -84,11 +65,98 @@ public class MainActivity extends Activity {
                     break;
 
                 case NotificationAction.BEGIN_GAME:
+                    hand.hide();
                     mGame.startGamePlay();
+                    updateScreen(Screen.MID_GAME);
                     break;
 
             }
         }
     }
 
+    //TODO: create more robust back button handling
+    @Override
+    public void onBackPressed() {
+        if (mCurrentScreen == Screen.START) {
+            super.onBackPressed();
+        }
+        else if (mCurrentScreen == Screen.PRE_GAME) {
+            mGame.stop();
+            updateScreen(Screen.START);
+        }
+        else if (mCurrentScreen == Screen.GAME_OVER) {
+            updateScreen(Screen.START);
+        }
+    }
+
+    //TODO: create more robust view swapping
+    private void updateScreen(Screen screen) {
+        mCurrentScreen = screen;
+        mainContentLayout.removeAllViewsInLayout();
+        hand.hide();
+
+        switch(screen) {
+            case START:
+                mainContentLayout.addView(new StartScreen(this, this).getContentView());
+                break;
+
+            case PRE_GAME:
+                mGame = new Game(this, (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE), this);
+                mainContentLayout.addView(new PreGameScreen(this, this).getContentView());
+                mGame.displayStartMenu();
+                hand.show();
+                break;
+
+            case MID_GAME:
+                mainContentLayout.addView(new MidGameScreen(this, this).getContentView());
+                break;
+
+            case GAME_OVER:
+                mainContentLayout.addView(new GameOverScreen(this, mGame, this).getContentView());
+                break;
+        }
+    }
+
+    @Override
+    public void onPlayClicked() {
+        if (Utils.isNetworkConnected(this)) {
+            new DisableInternetDialog(this, new DisableInternetDialog.DisableInternetListener() {
+                @Override
+                public void onContinue() {
+                    updateScreen(Screen.PRE_GAME);
+                }
+            }).show();
+        }
+        else {
+            updateScreen(Screen.PRE_GAME);
+        }
+    }
+
+    @Override
+    public void onHighScoresClicked() {
+
+    }
+
+    @Override
+    public void onStopGame() {
+        mGame.stop();
+        updateScreen(Screen.GAME_OVER);
+    }
+
+    @Override
+    public void onGameOver() {
+        updateScreen(Screen.GAME_OVER);
+    }
+
+    @Override
+    public void onHomeClick() {
+        updateScreen(Screen.START);
+    }
+
+    @Override
+    public void onCancel() {
+        hand.hide();
+        mGame.stop();
+        updateScreen(Screen.START);
+    }
 }

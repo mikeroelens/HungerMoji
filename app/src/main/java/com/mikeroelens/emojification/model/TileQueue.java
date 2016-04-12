@@ -16,6 +16,15 @@ public class TileQueue  {
         mNotificationManager = notificationManager;
     }
 
+    public void enableDismissalOnAllTiles() {
+        synchronized (TileQueue.class) {
+            for (TileNotification tile : tiles) {
+                tile.setOnGoing(false);
+                tile.display(mNotificationManager);
+            }
+        }
+    }
+
     public void add(TileNotification tile) {
         synchronized (TileQueue.class) {
             tile.display(mNotificationManager);

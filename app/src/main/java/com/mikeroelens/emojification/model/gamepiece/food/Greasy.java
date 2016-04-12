@@ -17,10 +17,10 @@ public class Greasy extends FoodPiece {
         Arrays.asList(
             Emojis.BURGER,
             Emojis.FRIES,
-            Emojis.PIZZA,
-            Emojis.BURRITO,
-            Emojis.TACO,
-            Emojis.HOTDOG
+            Emojis.PIZZA
+            //Emojis.BURRITO, // Only available on 6.0.1+ devices
+            //Emojis.TACO,
+            //Emojis.HOTDOG
         )
     );
 

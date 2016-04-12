@@ -17,8 +17,10 @@ public class Seafood extends FoodPiece {
         Arrays.asList(
             Emojis.SUSHI,
             Emojis.SHRIMP,
+            Emojis.FISH,
             Emojis.FISH_CAKE,
-            Emojis.ODEN
+            Emojis.ODEN,
+            Emojis.OCTOPUS
         )
     );
 

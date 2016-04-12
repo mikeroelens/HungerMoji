@@ -2,6 +2,7 @@ package com.mikeroelens.emojification.utils;
 
 
 import android.content.Context;
+import android.net.ConnectivityManager;
 import android.util.TypedValue;
 
 public class Utils {
@@ -13,5 +14,10 @@ public class Utils {
 
     public static int dpToPixels(Context context, int dpValue) {
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics()));
+    }
+
+    public static boolean isNetworkConnected(Context context) {
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }
 }

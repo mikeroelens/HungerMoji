@@ -10,11 +10,6 @@ public class Kitty extends Player {
 
     @Override
     String getNormalEmoji() {
-        return Emojis.CHAR_KITTY_NORMAL;
-    }
-
-    @Override
-    String getDeadEmoji() {
-        return Emojis.CHAR_KITTY_DEAD;
+        return Emojis.CHAR_KITTY;
     }
 }
