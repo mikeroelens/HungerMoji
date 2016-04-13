@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mikeroelens.emojification.MainActivity">
+    tools:context="com.mikeroelens.hungermoji.MainActivity">
 
     <FrameLayout
         android:id="@+id/bgPixelatedButton"
@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="@color/yellow">
 
-        <com.mikeroelens.emojification.view.PixelatedTextView
+        <com.mikeroelens.hungermoji.view.PixelatedTextView
             android:id="@+id/txtPixelatedButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

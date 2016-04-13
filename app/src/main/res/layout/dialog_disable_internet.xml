@@ -7,13 +7,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/black_border">
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="@string/dialog_disable_internet_message"/>
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -21,21 +21,21 @@
         android:textSize="20sp"
         android:text="@string/dialog_disable_internet_step_1"/>
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:textSize="20sp"
         android:text="@string/dialog_disable_internet_step_2"/>
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:textSize="20sp"
         android:text="@string/dialog_disable_internet_step_3"/>
 
-    <com.mikeroelens.emojification.view.PixelatedButton
+    <com.mikeroelens.hungermoji.view.PixelatedButton
         android:id="@+id/btnContinue"
         android:layout_width="match_parent"
         android:layout_height="60dp"

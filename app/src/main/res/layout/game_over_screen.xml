@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_centerHorizontal="true">
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -24,14 +24,14 @@
         android:textColor="@android:color/black"
         android:layout_gravity="center" />
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="30sp"
         android:text="@string/game_over_screen_you_scored"/>
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:id="@+id/txtGameScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:textSize="85sp"
         android:text="64"/>
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:id="@+id/txtHighScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:textSize="40sp"
         android:text="@string/game_over_screen_high_score"/>
 
-    <com.mikeroelens.emojification.view.PixelatedButton
+    <com.mikeroelens.hungermoji.view.PixelatedButton
         android:id="@+id/btnHome"
         android:layout_width="200dp"
         android:layout_height="70dp"

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:textSize="60sp"/>
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:id="@+id/txtSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         android:layout_below="@id/txtTitle"
         android:textSize="20sp"/>
 
-    <com.mikeroelens.emojification.view.PixelatedButton
+    <com.mikeroelens.hungermoji.view.PixelatedButton
         android:layout_width="265dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
@@ -67,7 +67,7 @@
         android:layout_centerInParent="true"
         android:background="@android:color/black" />
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:id="@+id/txtHowToPlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                 android:textColor="@android:color/black"
                 tools:text="X"/>
 
-            <com.mikeroelens.emojification.view.PixelatedTextView
+            <com.mikeroelens.hungermoji.view.PixelatedTextView
                 android:id="@+id/txtInstructionsBomb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
                 android:textColor="@android:color/black"
                 tools:text="X"/>
 
-            <com.mikeroelens.emojification.view.PixelatedTextView
+            <com.mikeroelens.hungermoji.view.PixelatedTextView
                 android:id="@+id/txtInstructionsBonus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
                 android:textSize="18sp"
                 tools:text="XYZ"/>
 
-            <com.mikeroelens.emojification.view.PixelatedTextView
+            <com.mikeroelens.hungermoji.view.PixelatedTextView
                 android:id="@+id/txtInstructionsFood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

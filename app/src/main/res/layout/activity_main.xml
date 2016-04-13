@@ -10,7 +10,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:padding="25dp"
-	tools:context="com.mikeroelens.emojification.MainActivity">
+	tools:context="com.mikeroelens.hungermoji.MainActivity">
 
 	<FrameLayout
 		android:id="@+id/main_content_view"
@@ -64,7 +64,7 @@
 
 </RelativeLayout>
 
-	<com.mikeroelens.emojification.view.SwipingHandView
+	<com.mikeroelens.hungermoji.view.SwipingHandView
 		android:layout_gravity="center_horizontal"
 		android:id="@+id/imgSwipeHand"
 		android:layout_width="150dp"

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center">
 
-    <com.mikeroelens.emojification.view.PixelatedTextView
+    <com.mikeroelens.hungermoji.view.PixelatedTextView
         android:id="@+id/txtCurrentGameMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         android:text="@string/mid_game_screen_currently_playing_message"
         android:textSize="20sp"/>
 
-    <com.mikeroelens.emojification.view.PixelatedButton
+    <com.mikeroelens.hungermoji.view.PixelatedButton
         android:id="@+id/btnStop"
         android:layout_width="225dp"
         android:layout_height="100dp"
