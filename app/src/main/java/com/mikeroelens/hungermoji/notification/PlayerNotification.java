@@ -93,8 +93,8 @@ public class PlayerNotification extends BaseNotification {
     public void updateScore(int delta) {
         scoreKeeperIcon.updateScore(delta);
 
-        // Don't show score delta for increases of only 1
-        if (delta != 1) {
+        // Don't show score delta for increases of 0 or 1
+        if (delta != 0 && delta != 1) {
             scoreKeeperIcon.updateDelta(delta);
 
             //TODO: is this hacky? will getMainLooper technically only work for Activities?
