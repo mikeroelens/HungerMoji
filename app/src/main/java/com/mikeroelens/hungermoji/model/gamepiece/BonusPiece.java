@@ -5,6 +5,8 @@ import com.mikeroelens.hungermoji.model.Emojis;
 import java.util.Random;
 
 public class BonusPiece extends GamePiece {
+    private static final Rnadom PRNG = new Random();
+
     @Override
     public int dismissedScoreDelta() {
         return 10;
@@ -12,7 +14,7 @@ public class BonusPiece extends GamePiece {
 
     @Override
     public String render() {
-        if (new Random().nextInt(2) == 0) {
+        if (PRNG.nextInt(2) == 0) {
             return Emojis.POINTING_LEFT + "  " + Emojis.TEN;
         }
         else {
