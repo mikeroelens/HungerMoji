@@ -48,29 +48,30 @@ public class MainActivity extends Activity implements StartScreen.StartScreenLis
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
-        if (intent.getStringExtra(NotificationAction.KEY_ACTION) != null) {
-            String action = intent.getStringExtra(NotificationAction.KEY_ACTION);
+        if (intent.getStringExtra(NotificationAction.KEY_ACTION) == null) {
+            return;
+        }
 
-            switch (action) {
-                case NotificationAction.NEXT_PLAYER:
+        String action = intent.getStringExtra(NotificationAction.KEY_ACTION);
+
+        switch (action) {
+            case NotificationAction.NEXT_PLAYER:
                     mGame.nextPlayer();
                     break;
 
-                case NotificationAction.NEXT_FOOD:
+            case NotificationAction.NEXT_FOOD:
                     mGame.nextFood();
                     break;
 
-                case NotificationAction.TILE_DISMISSED:
+            case NotificationAction.TILE_DISMISSED:
                     mGame.tileRemoved(intent.getIntExtra(NotificationAction.KEY_NOTIFICATION_ID, 0));
                     break;
 
-                case NotificationAction.BEGIN_GAME:
+            case NotificationAction.BEGIN_GAME:
                     hand.hide();
                     mGame.startGamePlay();
                     updateScreen(Screen.MID_GAME);
                     break;
-
-            }
         }
     }
 
